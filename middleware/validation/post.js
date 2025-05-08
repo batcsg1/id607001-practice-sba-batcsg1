@@ -6,8 +6,8 @@ const validatePostPost = (req, res, next) => {
       title: Joi.string().min(3).max(100).required().messages({
         "string.base": "title should be a string",
         "string.empty": "title cannot be empty",
-        "string.min": "title should have a minimum length of {#limit}",
-        "string.max": "title should have a maximum length of {#limit}",
+        "string.min": "title must be at least {#limit} characters long",
+        "string.max": "title must be at lesser than {#limit} characters long",
         "any.required": "title is required"
       }),
       content: Joi.string().min(3).max(100).required().messages({

@@ -2,7 +2,7 @@
 
 import Repository from "/repositories/generic.js";
 
-const userRepository = new Repository("Constellation");
+const userRepository = new Repository("User");
 
 const selectObject = {
   id: true,

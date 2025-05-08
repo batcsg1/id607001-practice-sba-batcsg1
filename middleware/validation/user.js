@@ -40,7 +40,8 @@ const validatePostUser = (req, res, next) => {
 
 const validatePutUser = (req, res, next) => {
   // Write your schema solution here
-
+  const putSchema = Joi.object({});
+  
   const { error } = putSchema.validate(req.body);
 
   if (error) {

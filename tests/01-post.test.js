@@ -36,6 +36,7 @@ describe('Posts', () => {
     const res = await chai.request(app).post('/api/posts').send({
       title: 'Valid Title',
       content: 'Some content here',
+      published: true,
     });
 
     chai.expect(res.body.message).to.be.equal('authorId is required');
@@ -43,7 +44,7 @@ describe('Posts', () => {
 
   it('should retrieve all posts', async () => {
     const res = await chai.request(app).get('/api/posts');
-
+  
     chai.expect(res.body.data).to.be.an('array');
   });
 });

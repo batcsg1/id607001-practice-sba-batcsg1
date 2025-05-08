@@ -17,12 +17,11 @@ const validatePostUser = (req, res, next) => {
       "string.max": "lastName should have a maximum length of {#limit}",
       "any.required": "lastName is required"
     }),
-    email: Joi.string().min(3).max(100).required().messages({
-      "string.base": "Shape should be a string",
-      "string.empty": "Shape cannot be empty",
-      "string.min": "Shape should have a minimum length of {#limit}",
-      "string.max": "Shape should have a maximum length of {#limit}",
-      "any.required": "email is required"
+    email: Joi.string().pattern(new RegExp('^([a-z]+.[a-z]+)@outlook.com')).required().messages({
+      "string.base": "email should be a string",
+      "string.empty": "email cannot be empty",
+      "any.required": "email is required",
+      "string.pattern.base": "email must end with @outlook.com"
     }),
   });
   

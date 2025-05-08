@@ -2,6 +2,27 @@ import Joi from 'joi';
 
 const validatePostUser = (req, res, next) => {
   // Write your schema solution here
+  const postSchema = Joi.object({
+    firstName: Joi.string().min(3).max(100).required().messages({
+      "string.base": "firstName should be a string",
+      "string.empty": "firstName cannot be empty",
+      "string.min": "firstName should have a minimum length of {#limit}",
+      "string.max": "firstName should have a maximum length of {#limit}"
+    }),
+    lastName: Joi.string().min(3).max(100).required().messages({
+      "string.base": "lastName should be a string",
+      "string.empty": "lastName cannot be empty",
+      "string.min": "lastName should have a minimum length of {#limit}",
+      "string.max": "lastName should have a maximum length of {#limit}"
+    }),
+    email: Joi.string().min(3).max(100).required().messages({
+      "string.base": "Shape should be a string",
+      "string.empty": "Shape cannot be empty",
+      "string.min": "Shape should have a minimum length of {#limit}",
+      "string.max": "Shape should have a maximum length of {#limit}"
+    }),
+  });
+  
 
   const { error } = postSchema.validate(req.body);
 

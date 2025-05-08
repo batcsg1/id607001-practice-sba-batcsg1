@@ -29,7 +29,7 @@ const createUser = async (req, res) => {
 const getUsers = async (req, res) => {
   try {
     const users = await userRepository.findAll(selectObject);
-    if (!users || users.length === 0) {
+    if (!users) {
       return res.status(404).json({ message: "No users found" });
     }
     return res.status(200).json({

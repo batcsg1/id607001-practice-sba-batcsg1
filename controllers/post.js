@@ -1,6 +1,6 @@
 // Write solution
 
-import Repository from "/repositories/generic.js";
+import Repository from "../repositories/generic.js";
 
 const postRepository = new Repository("Post");
 
